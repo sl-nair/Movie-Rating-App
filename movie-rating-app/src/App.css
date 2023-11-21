@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.tile-box{
+    background-color: #cfe8fc;
+    height: 10vh;
+    margin: 20px;
+}
