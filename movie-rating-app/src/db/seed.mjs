@@ -7,31 +7,35 @@ import { ref, set, update } from "firebase/database";
 const data = {
     movies: [
         {
+            'id': 0,
             'title': 'Interstellar',
-            'rating_count': 2000,
-            'rating': 4.9
+            'rating_count': 20,
+            'rating': 4.9400001
         },
         {
+            'id': 1,
             'title': 'Frozen',
-            'rating_count': 2344,
-            'rating': 2.2
+            'rating_count': 23,
+            'rating': 2.21000932
         },
         {
+            'id': 2,
             'title': 'Toy Story',
-            'rating_count': 5893,
-            'rating': 3.5
+            'rating_count': 58,
+            'rating': 3.5889390
         },
         {
+            'id': 3,
             'title': 'Shrek',
-            'rating_count': 4503,
-            'rating': 4.8
+            'rating_count': 45,
+            'rating': 4.800009909
         },
     ],
 }
 
 const updates = {};
 // updates['cart/' + cartId + '/cartId'] = updatedCartId;
-updates['movies/' + '/movies'] = { Frozen: 'updated product', rating : 5.0, rating_count: 1000000 };
+// updates['movies/' + '/movies'] = { Frozen: 'updated product', rating : 5.0, rating_count: 1000000 };
 
 set(ref(database, 'movies/'), data).then(() => {
     // Success.
@@ -39,8 +43,15 @@ set(ref(database, 'movies/'), data).then(() => {
     console.log(error);
 });
 
-update(ref(database), updates).then(() => {
-    // Success
-}).catch((error) => {
-    console.log(error)
-})
+// const newMovie = {
+//     'id': 3,
+//     'title': 'Shrek',
+//     'rating_count': 4503,
+//     'rating': 1.0
+// }
+// updates['movies/movies/3'] = newMovie;
+// update(ref(database), updates).then(() => {
+//     // Success
+// }).catch((error) => {
+//     console.log(error)
+// })

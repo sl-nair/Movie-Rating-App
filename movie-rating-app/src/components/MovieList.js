@@ -20,7 +20,7 @@ function MovieList() {
                 console.log('Data not found');
             }
         }, {
-            onlyOnce: true
+            onlyOnce: false
         });
 
 
