@@ -32,13 +32,47 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-.tile-box{
-    background-color: #cfe8fc;
-    height: 10vh;
-    margin: 20px;
+.tile-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #cfe8fc;
+  width: 100%;
+  margin: 20px;
+  padding: 20px;
+  border: 1px black solid;
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px;
+}
+
+.top-row {
+  padding-left: 0px !important;
+  white-space: pre;
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-reviews {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+}
+
+.title{
+  margin: 0px;
+  margin-right: 20px;
+}
+
+.description{
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
 }

@@ -64,6 +64,7 @@ function MovieTile(props) {
         const newMovie = {
             'id': movie.id,
             'title': movie.title,
+            'description': movie.description,
             'rating_count': movie.rating_count + 1,
             'rating': updatedRating
         }
@@ -83,12 +84,23 @@ function MovieTile(props) {
     }
 
     return (
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
             {typeof movie === 'undefined'
                 ? <div>Loading...</div>
-                : <div className='tile-box'>Title: {movie.title}, rating: {Math.round(movie.rating * 10) / 10}
-                    <StarIcon /> Based on {movie.rating_count} reviews
-                    <Button variant="contained" onClick={() => handleOpen()}>Rate</Button>
+                : <div className='tile-box'>
+                    <Container className='top-row'>
+                        <Container className='title-reviews'>
+                            <h2 className='title'>
+                                {movie.title}            
+                            </h2>
+                            Rating: {Math.round(movie.rating * 10) / 10}
+                            <StarIcon /> Based on {movie.rating_count} reviews
+                        </Container>
+                        <Button variant="contained" onClick={() => handleOpen()}>Rate</Button>
+                    </Container>
+                    <Container className='description'>
+                        {movie.description}
+                    </Container>
                     <Modal
                         open={modalState}
                         onClose={handleClose}
@@ -133,7 +145,7 @@ function MovieTile(props) {
             }
             <Snackbar open={snackBar} autoHideDuration={6000} onClose={handleSnackBarClose}>
                 <Alert onClose={handleSnackBarClose} severity="success" sx={{ width: '100%' }}>
-                    This is a success message!
+                    Thanks for rating!
                 </Alert>
             </Snackbar>
         </Container>

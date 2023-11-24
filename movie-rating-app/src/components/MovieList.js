@@ -27,9 +27,6 @@ function MovieList() {
     }, []);
 
     const getList = () => {
-        console.log("mobie list: ")
-        console.log(movieList.movies)
-
         const tiles = [];
         movieList.movies.forEach(movie => {
             tiles.push(<MovieTile movie={movie} />)
@@ -43,7 +40,7 @@ function MovieList() {
 
     return (
         <div>
-            MovieTile
+            <h1> Movie-Rating-App </h1>
             {typeof movieList === 'undefined'
                 ? <div>
                     loading...
